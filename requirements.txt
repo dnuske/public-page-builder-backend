@@ -1,0 +1,11 @@
+django==3.2
+django-filter==2.4.0
+django-environ==0.4.5
+drf-yasg==1.20.0
+djangorestframework==3.12.4
+gunicorn==20.1.0
+python-dotenv==0.19.2
+# comment during dev on m1
+psycopg2-binary
+git+https://github.com/dnuske/django-rest-authemail@master#egg=django-rest-authemail
+django-cors-headers==3.10.1
