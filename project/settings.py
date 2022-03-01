@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('NAME'),
-        'USER': os.getenv('USER'),
+        'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('PASSWORD'),
         'HOST': os.getenv('HOST'),
         'PORT': os.getenv('PORT'),
@@ -150,15 +150,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', default='asd')
 ENV_ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 ALLOWED_HOSTS = ENV_ALLOWED_HOSTS.split(',') if ENV_ALLOWED_HOSTS is not None else []
 DEBUG = bool(strtobool(os.environ.get('DEBUG', default='True')))
-print(" ----- DEBUG", DEBUG)
 CORS_ORIGIN_ALLOW_ALL = DEBUG
-print(" ----- CORS_ORIGIN_ALLOW_ALL", CORS_ORIGIN_ALLOW_ALL)
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', default='')
 if CORS_ALLOWED_ORIGINS:
   CORS_ALLOWED_ORIGINS = CORS_ALLOWED_ORIGINS.split(',')
 else:
   CORS_ALLOWED_ORIGINS = []
-print(" ----- CORS_ALLOWED_ORIGINS", CORS_ALLOWED_ORIGINS)
 
 APPEND_SLASH=True
 
